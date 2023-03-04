@@ -18,37 +18,52 @@
                 return 3;
             } else {
                 alert("You didn't type 'rock,' 'paper,' or 'scissors.'\n\nIf you don't want to play, just close the tab.");
-                humanThrow = prompt("So, which will you throw? \n \n (Please type 'rock,' 'paper,' or 'scissors')");
-                return processThrow();
+                return tryAgain();
             }
         }
 
-        const botThrow = Math.ceil(Math.random() * 3);
+        let botThrow = Math.ceil(Math.random() * 3);
+
+        function tryAgain() {
+            humanThrow = prompt("So, which will you throw? \n \n (Please type 'rock,' 'paper,' or 'scissors')")
+            botThrow = Math.ceil(Math.random() * 3);
+            processThrow();
+            runGame();            
+        }
 
         function runGame() {
             if (parseInt(processThrow())===1) {
                 if (botThrow===1) { 
-                    alert("\nYou chose rock too? Well then, it's a draw! \n \nRefresh the page to try again. \n ")
+                    alert("\nYou chose rock too? Well then, it's a draw! \n \nClick OK to try again. \n ");
+                    return tryAgain();
                 } else if (botThrow===2) {
-                    alert("\nHa! I chose paper; I win! \n \nRefresh the page to try again. \n ")
+                    alert("\nHa! I chose paper; I win! \n \nClick OK to try again. \n ");
+                    return tryAgain();
                 } else if (botThrow===3) {
-                    alert("\nDang, I chose scissors... you win! \n \nRefresh the page to try again. \n ")
+                    alert("\nDang, I chose scissors... you win! \n \nClick OK to try again. \n ");
+                    return tryAgain();
                 }
             } else if (parseInt(processThrow())===2) {
                 if (botThrow===1) {
-                    alert("\nDang, I chose rock... you win! \n \nRefresh the page to try again. \n ")
+                    alert("\nDang, I chose rock... you win! \n \nClick OK to try again. \n ");
+                    return tryAgain();
                 } else if (botThrow===2) {
-                    alert("\nWe both chose paper - it's a draw! \n \nRefresh the page to try again. \n ")
+                    alert("\nWe both chose paper - it's a draw! \n \nClick OK to try again. \n ");
+                    return tryAgain();
                 } else if (botThrow===3) {
-                    alert("\nHa!, I chose scissors; I win! \n \nRefresh the page to try again. \n ")
+                    alert("\nHa!, I chose scissors; I win! \n \nClick OK to try again. \n ");
+                    return tryAgain();
                 }
             } else if (parseInt(processThrow())===3) {
                 if (botThrow===1) {
-                    alert("\nHa! I chose rock; you lost! \n \nRefresh the page to try again. \n ")
+                    alert("\nHa! I chose rock; you lost! \n \nClick OK to try again. \n ");
+                    return tryAgain();
                 } else if (botThrow===2) {
-                    alert("\nDarn, I chose paper... you win! \n \nRefresh the page to try again. \n ")
+                    alert("\nDarn, I chose paper... you win! \n \nClick OK to try again. \n ");
+                    return tryAgain();
                 } else if (botThrow===3) {
-                    alert("\nWe both chose scissors - it's a draw! \n \nRefresh the page to try again. \n ")
+                    alert("\nWe both chose scissors - it's a draw! \n \nClick OK to try again. \n ");
+                    return tryAgain();
                 }
             }
         }
