@@ -7,72 +7,87 @@
 </head>
 <body>
     <script>
+        // Starting alert, setting rules.
+
         alert("Let's play Rock, Paper, Scissors! \n \nThe rules are simple. You throw rock, paper, or scissors. Rock breaks scissors; scissors cut paper; and paper covers rock. \n \nGot it?");
+        
+        // Player picks rock, paper, or scissors.
+        
         let humanThrow = prompt("So, which will you throw? \n \n (Please type 'r' for rock, 'p' for paper, or 's' for scissors)");
+        
+        // Player's choice returns a number 
+        
         function processThrow() {
             if (humanThrow === "r" || humanThrow === "R") {
-                return 1;
+                return "rock";
             } else if (humanThrow === "p" || humanThrow === "P") {
-                return 2;
+                return "paper";
             } else if (humanThrow === "s" || humanThrow === "S") {
-                return 3;
+                return "scissors";
             } else if (humanThrow === null) {
-                return 4;
+                return null;
             } else {
                 alert("Sorry, I didn't understand your choice; you must type 'r,' 'p,' or 's'\n\n(If you don't want to play, just select 'cancel' when prompted)");
                 return tryAgain();
             }
         }
 
+        // Bot picks a random number between 1 and 3
+
         let botThrow = Math.ceil(Math.random() * 3);
 
-        function tryAgain() {
-            humanThrow = prompt("So, which will you throw this time? \n \n (Please type 'r' for rock, 'p' for paper, or 's' for scissors)")
-            botThrow = Math.ceil(Math.random() * 3);
-            logBotThrow();
-            processThrow();
-            runGame();            
-        }
+
+        // Translate random pick for readable code
+
+        const rock = 1
+        const paper = 2
+        const scissors = 3
+
+        // The actual game, with the processThrow and botThrow as operators
 
         function runGame() {
-            if (parseInt(processThrow())===1) {
-                if (botThrow===1) { 
+            if (processThrow()==="rock") {
+                if (botThrow===rock) { 
                     alert("\nWe both chose rock - it's a draw! \n \nClick OK to try again. \n ");
                     return tryAgain();
-                } else if (botThrow===2) {
+                } else if (botThrow===paper) {
                     alert("\nHa! I chose paper; I win! \n \nClick OK to try again. \n ");
                     return tryAgain();
-                } else if (botThrow===3) {
+                } else if (botThrow===scissors) {
                     alert("\nDang, I chose scissors... you win! \n \nClick OK to try again. \n ");
                     return tryAgain();
                 }
-            } else if (parseInt(processThrow())===2) {
-                if (botThrow===1) {
+            } else if (processThrow()==="paper") {
+                if (botThrow===rock) {
                     alert("\nDang, I chose rock... you win! \n \nClick OK to try again. \n ");
                     return tryAgain();
-                } else if (botThrow===2) {
+                } else if (botThrow===paper) {
                     alert("\nWe both chose paper - it's a draw! \n \nClick OK to try again. \n ");
                     return tryAgain();
-                } else if (botThrow===3) {
+                } else if (botThrow===scissors) {
                     alert("\nHa! I chose scissors; I win! \n \nClick OK to try again. \n ");
                     return tryAgain();
                 }
-            } else if (parseInt(processThrow())===3) {
-                if (botThrow===1) {
+            } else if (processThrow()==="scissors") {
+                if (botThrow===rock) {
                     alert("\nHa! I chose rock; you lost! \n \nClick OK to try again. \n ");
                     return tryAgain();
-                } else if (botThrow===2) {
+                } else if (botThrow===paper) {
                     alert("\nDarn, I chose paper... you win! \n \nClick OK to try again. \n ");
                     return tryAgain();
-                } else if (botThrow===3) {
+                } else if (botThrow===scissors) {
                     alert("\nWe both chose scissors - it's a draw! \n \nClick OK to try again. \n ");
                     return tryAgain();
                 }
-            } else if (processThrow()===4) {
+            } else if (processThrow()===null) {
                 alert("Don't want to play anymore? No worries! \n\nCome back any time :)");
+                return;
+            } else {
                 return;
             }
         }
+
+        // Log the bot's choices in the console
 
         function logBotThrow() {
             if (botThrow===1) {
@@ -84,7 +99,20 @@
             }
         }
 
-        runGame()
+        // Execute running the game function, calling processThrow(), and log the bot's choice
+
+        logBotThrow();
+        runGame();
+
+        // Next game, or second try at entering a valid input
+
+        function tryAgain() {
+            humanThrow = prompt("So, which will you throw this time? \n \n (Please type 'r' for rock, 'p' for paper, or 's' for scissors)")
+            botThrow = Math.ceil(Math.random() * 3);
+            logBotThrow();
+            runGame();            
+        }
+
     </script>
     
 </body>
