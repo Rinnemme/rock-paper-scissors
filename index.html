@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class = "rock-paper-scissors">
-        <img class="rps" src="img/rock-paper-scissors.png">
-    </div>
     <script>
         alert("Let's play Rock, Paper, Scissors! \n \nThe rules are simple. You throw rock, paper, or scissors. Rock breaks scissors; scissors cut paper; and paper covers rock. \n \nGot it?");
         let humanThrow = prompt("So, which will you throw? \n \n (Please type 'rock,' 'paper,' or 'scissors')");
@@ -20,7 +17,7 @@
             } else if (humanThrow === "scissors" || humanThrow === "Scissors") {
                 return 3;
             } else {
-                alert("You didn't type 'rock,' 'paper,' or 'scissors.'");
+                alert("You didn't type 'rock,' 'paper,' or 'scissors.'\n\nIf you don't want to play, just close the tab.");
                 humanThrow = prompt("So, which will you throw? \n \n (Please type 'rock,' 'paper,' or 'scissors')");
                 return processThrow();
             }
@@ -49,7 +46,7 @@
                 if (botThrow===1) {
                     alert("\nHa! I chose rock; you lost! \n \nRefresh the page to try again. \n ")
                 } else if (botThrow===2) {
-                    alert("\nHa! I chose paper; you lost! \n \nRefresh the page to try again. \n ")
+                    alert("\nDarn, I chose paper... you win! \n \nRefresh the page to try again. \n ")
                 } else if (botThrow===3) {
                     alert("\nWe both chose scissors - it's a draw! \n \nRefresh the page to try again. \n ")
                 }
