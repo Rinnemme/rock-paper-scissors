@@ -10,11 +10,9 @@
         <img class="rps" src="img/rock-paper-scissors.png">
     </div>
     <script>
-        setTimeout(function() {
-            alert("Let's play Rock, Paper, Scissors! \n \nThe rules are simple. You throw rock, paper, or scissors. Rock breaks scissors; scissors cut paper; and paper covers rock. \n \nGot it?");
-        },1);
+        alert("Let's play Rock, Paper, Scissors! \n \nThe rules are simple. You throw rock, paper, or scissors. Rock breaks scissors; scissors cut paper; and paper covers rock. \n \nGot it?");
+        let humanThrow = prompt("So, which will you throw? \n \n (Please type 'rock,' 'paper,' or 'scissors')");
         function processThrow() {
-            let humanThrow = prompt("So, which will you throw? \n \n (Please type 'rock,' 'paper,' or 'scissors')");
             if (humanThrow === "rock" || humanThrow === "Rock") {
                 return 1;
             } else if (humanThrow === "paper" || humanThrow === "Paper") {
@@ -22,14 +20,15 @@
             } else if (humanThrow === "scissors" || humanThrow === "Scissors") {
                 return 3;
             } else {
-                alert("Please type 'rock,' 'paper,' or 'scissors'");
+                alert("You didn't type 'rock,' 'paper,' or 'scissors.'");
+                humanThrow = prompt("So, which will you throw? \n \n (Please type 'rock,' 'paper,' or 'scissors')");
                 return processThrow();
             }
         }
 
         const botThrow = Math.ceil(Math.random() * 3);
 
-        setTimeout(function runGame() {
+        function runGame() {
             if (parseInt(processThrow())===1) {
                 if (botThrow===1) { 
                     alert("\nYou chose rock too? Well then, it's a draw! \n \nRefresh the page to try again. \n ")
@@ -52,10 +51,10 @@
                 } else if (botThrow===2) {
                     alert("\nHa! I chose paper; you lost! \n \nRefresh the page to try again. \n ")
                 } else if (botThrow===3) {
-                    alert("\nDang, I chose scissors; you win! \n \nRefresh the page to try again. \n ")
+                    alert("\nWe both chose scissors - it's a draw! \n \nRefresh the page to try again. \n ")
                 }
             }
-        },1);
+        }
 
         function logBotThrow() {
             if (botThrow===1) {
