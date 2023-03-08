@@ -6,64 +6,114 @@ html {
 
 body {
     display:flex;
-    height:100%;
-    width:100%;
+    height:100vw;
+    width:100vw;
     margin:0;
     padding:0;
+    align-items:center;
+    justify-content:center;
 }
 
 .content {
-
+    border:1px solid black;
+    display:flex;
+    flex-direction:column;
+    width:70%;
+    height:50%;
+    align-self:center;
+    justify-self:center;
 }
 
+/* Block 1 (heading, rules, message text)*/
+
 .rule-message {
+    border:1px solid black;
+    display:flex;
+    flex-direction:column;
+    flex:2;
+    justify-content: center;
+    align-items:center;
 
 }
 
 .heading {
-
+    border:1px solid black;
+    display:flex;
+    flex:1;
 }
 
 .rules {
-
+    border:1px solid black;
+    display:flex;
+    flex:1;
 }
 
 .message {
-
+    border:1px solid black;
+    display:flex;
+    flex:1;
 }
 
-.game-buttons {
+/* Block 2 (buttons) */
 
+.game-buttons {
+    border:1px solid black;
+    display:flex;
+    flex:1;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
 }
 
 .rock {
-
+    border:1px solid black;
+    display:flex;
+    width:20%;
 }
 
 .paper {
-
+    border:1px solid black;
+    display:flex;
+    width:20%;
 }
 
 .scissors {
-
+    border:1px solid black;
+    display:flex;
+    width:20%;
 }
 
-.scoreboard {
+/* Block 3 (scoreboard) */
 
+.scoreboard {
+    border:1px solid black;
+    display:flex;
+    flex:1;
+    flex-direction:column;
 }
 
 .score-heading{
-
+    border:1px solid black;
+    display:flex;
+    flex:1;
+    justify-self:center;
+    align-self:center;
 }
 
 .score-boxes {
-
+    border:1px solid black;
+    display:flex;
+    flex:2;
+    justify-content:center;
+    align-items:center;
 }
 
 .human-score {
-
+    border:1px solid black;
+    display:flex;
 }
 
 .bot-score {
-    
+    border:1px solid black;
+    display:flex;
 }
