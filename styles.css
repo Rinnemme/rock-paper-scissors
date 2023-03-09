@@ -211,7 +211,7 @@ body {
 
 .rules-inner-window {
     width:35%;
-    max-width:340px;
+    max-width:350px;
     box-shadow:1px 1px 10px;
     border-radius:5px;
 }
@@ -231,5 +231,5 @@ body {
     position:relative;
     background-color: #fdfdfd;
     border-radius: 0px 0px 5px 5px;
-    padding:20px;
+    padding:25px;
 }
