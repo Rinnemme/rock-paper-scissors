@@ -125,6 +125,7 @@ body {
 
 .throw-button:hover {
     box-shadow: 0 0 12px rgb(74, 74, 74);
+    transition:0.3s;
     cursor:pointer;
 }
 
