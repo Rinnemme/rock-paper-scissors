@@ -73,6 +73,7 @@
         RockButton.addEventListener("click",getRock)
         PaperButton.addEventListener("click",getPaper)
         ScissorsButton.addEventListener("click",getScissors)
+        Reset.addEventListener("click",resetGame)
 
         function getBotThrow() {
             return Throws[Math.floor(Math.random()*3)]
@@ -157,6 +158,14 @@
                 Message.textContent = "I've won our game to 5!";
             }
             else return;
+        }
+
+        function resetGame() {
+            HumanCount=0;
+            HumanScore.textContent = `You: ${HumanCount}`;
+            BotCount=0;
+            BotScore.textContent = `Me: ${BotCount}`;
+            Message.textContent = "Click a button below to make your first throw";
         }
     </script>
 </body>
