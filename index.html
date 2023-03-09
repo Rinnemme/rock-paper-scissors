@@ -72,142 +72,142 @@
         </div>
     </div>
     <script>
-        let HumanThrow;
-        const Throws = ["Rock","Paper","Scissors"];
-        let BotThrow;
-        let BotCount = 0;
-        let HumanCount = 0;
-        const BotScore = document.getElementById("bot-score");
-        const HumanScore = document.getElementById("human-score");
-        const RockButton = document.getElementById("rock-button");
-        const PaperButton = document.getElementById("paper-button");
-        const ScissorsButton =  document.getElementById("scissors-button");
-        const Reset =  document.getElementById("reset-button");
-        const Message = document.getElementById("message-text");
-        const Rules = document.getElementById("rules-window");
-        const CloseButton = document.getElementById("close-rules");
-        const RuleButton = document.getElementById("rule-button")
-        BotScore.textContent = `Me: ${BotCount}`
-        HumanScore.textContent = `You: ${HumanCount}`
+        let humanThrow;
+        const throws = ["Rock","Paper","Scissors"];
+        let botThrow;
+        let botCount = 0;
+        let humanCount = 0;
+        const botScore = document.getElementById("bot-score");
+        const humanScore = document.getElementById("human-score");
+        const rockButton = document.getElementById("rock-button");
+        const paperButton = document.getElementById("paper-button");
+        const scissorsButton =  document.getElementById("scissors-button");
+        const reset =  document.getElementById("reset-button");
+        const message = document.getElementById("message-text");
+        const rules = document.getElementById("rules-window");
+        const closeButton = document.getElementById("close-rules");
+        const ruleButton = document.getElementById("rule-button")
+        botScore.textContent = `Me: ${botCount}`
+        humanScore.textContent = `You: ${humanCount}`
         
 
-        RockButton.addEventListener("click",getRock)
-        PaperButton.addEventListener("click",getPaper)
-        ScissorsButton.addEventListener("click",getScissors)
-        Reset.addEventListener("click",resetGame)
-        RuleButton.addEventListener("click",openRules)
-        CloseButton.addEventListener("click",closeRules)
+        rockButton.addEventListener("click",getRock)
+        paperButton.addEventListener("click",getPaper)
+        scissorsButton.addEventListener("click",getScissors)
+        reset.addEventListener("click",resetGame)
+        ruleButton.addEventListener("click",openRules)
+        closeButton.addEventListener("click",closeRules)
 
         function openRules() {
-            Rules.style.display = "flex";
+            rules.style.display = "flex";
         }
 
         function closeRules() {
-            Rules.style.display = "none";
+            rules.style.display = "none";
         }
 
         function getBotThrow() {
-            return Throws[Math.floor(Math.random()*3)]
+            return throws[Math.floor(Math.random()*3)]
         }
 
         function getRock() {
-            HumanThrow = "Rock";
-            BotThrow = Throws[Math.floor(Math.random()*3)];
-            console.log(BotThrow);
+            humanThrow = "Rock";
+            botThrow = throws[Math.floor(Math.random()*3)];
+            console.log(botThrow);
             runGame();
         }
 
         function getPaper() {
-            HumanThrow = "Paper";
-            BotThrow = Throws[Math.floor(Math.random()*3)];
-            console.log(BotThrow);
+            humanThrow = "Paper";
+            botThrow = throws[Math.floor(Math.random()*3)];
+            console.log(botThrow);
             runGame();
         }
 
         function getScissors() {
-            HumanThrow = "Scissors";
-            BotThrow = Throws[Math.floor(Math.random()*3)];
-            console.log(BotThrow);
+            humanThrow = "Scissors";
+            botThrow = throws[Math.floor(Math.random()*3)];
+            console.log(botThrow);
             runGame();
         }
 
 
 
         function runGame() {
-            if (HumanCount === 5) {
-                Message.textContent = "You already won! Press reset to play again";
-            } else if (BotCount === 5) {
-                Message.textContent = "I already won! Press reset to play again";
+            if (humanCount === 5) {
+                message.textContent = "You already won! Press reset to play again";
+            } else if (botCount === 5) {
+                message.textContent = "I already won! Press reset to play again";
             }
-            else if (HumanThrow===BotThrow) {
-                Message.textContent = "Oh dang, we tied!";
+            else if (humanThrow===botThrow) {
+                message.textContent = "Oh dang, we tied!";
             }
-            else if (HumanThrow==="Rock") {
-                if (BotThrow==="Scissors") {
-                    Message.textContent = "Your rock smashes my scissors!";
+            else if (humanThrow==="Rock") {
+                if (botThrow==="Scissors") {
+                    message.textContent = "Your rock smashes my scissors!";
                     addHumanWin();
                 }
-                if (BotThrow==="Paper") {
-                    Message.textContent = "My paper covers your rock!";
+                if (botThrow==="Paper") {
+                    message.textContent = "My paper covers your rock!";
                     addBotWin();
                 }
-            } else if (HumanThrow==="Paper") {
-                if (BotThrow==="Rock") {
-                    Message.textContent = "Your paper covers my rock!";
+            } else if (humanThrow==="Paper") {
+                if (botThrow==="Rock") {
+                    message.textContent = "Your paper covers my rock!";
                     addHumanWin();
                 }
-                if (BotThrow==="Scissors") {
-                    Message.textContent = "My Scissors cut your paper!";
+                if (botThrow==="Scissors") {
+                    message.textContent = "My Scissors cut your paper!";
                     addBotWin();
                 }
-            } else if (HumanThrow==="Scissors") {
-                if (BotThrow==="Paper") {
-                    Message.textContent = "Your scissors cut my paper!";
+            } else if (humanThrow==="Scissors") {
+                if (botThrow==="Paper") {
+                    message.textContent = "Your scissors cut my paper!";
                     addHumanWin();
                 }
-                if (BotThrow==="Rock") {
-                    Message.textContent = "My rock smashes your scissors!";
+                if (botThrow==="Rock") {
+                    message.textContent = "My rock smashes your scissors!";
                     addBotWin();
                 }
             }
         }
 
         function addBotWin() {
-            ++BotCount;
-            BotScore.textContent = `Me: ${BotCount}`;
-            BotScore.style.backgroundColor = "rgb(249,201,197)";
-            HumanScore.style.backgroundColor = "rgb(239,239,239)";
+            ++botCount;
+            botScore.textContent = `Me: ${botCount}`;
+            botScore.style.backgroundColor = "rgb(249,201,197)";
+            humanScore.style.backgroundColor = "rgb(239,239,239)";
             testWin();
         }
 
         function addHumanWin () {
-            ++HumanCount;
-            HumanScore.textContent = `You: ${HumanCount}`;
-            HumanScore.style.backgroundColor = "rgb(201,240,230)";
-            BotScore.style.backgroundColor = "rgb(239,239,239)";
+            ++humanCount;
+            humanScore.textContent = `You: ${humanCount}`;
+            humanScore.style.backgroundColor = "rgb(201,240,230)";
+            botScore.style.backgroundColor = "rgb(239,239,239)";
             testWin();
         }
 
         function testWin() {
-            if (HumanCount === 5) {
-                Message.style.backgroundColor = "rgb(201,240,230)";
-                Message.textContent = "You've won our game to 5!";
-            } else if (BotCount === 5) {
-                Message.style.backgroundColor = "rgb(249,201,197)";
-                Message.textContent = "I've won our game to 5!";
+            if (humanCount === 5) {
+                message.style.backgroundColor = "rgb(201,240,230)";
+                message.textContent = "You've won our game to 5!";
+            } else if (botCount === 5) {
+                message.style.backgroundColor = "rgb(249,201,197)";
+                message.textContent = "I've won our game to 5!";
             }
             else return;
         }
 
         function resetGame() {
-            HumanCount=0;
-            HumanScore.textContent = `You: ${HumanCount}`;
-            BotCount=0;
-            BotScore.textContent = `Me: ${BotCount}`;
-            Message.textContent = "Click a button below to make your first throw";
-            HumanScore.style.backgroundColor = "rgb(239,239,239)"
-            Message.style.backgroundColor = "rgb(239,239,239)"
-            BotScore.style.backgroundColor = "rgb(239,239,239)"
+            humanCount=0;
+            humanScore.textContent = `You: ${humanCount}`;
+            botCount=0;
+            botScore.textContent = `Me: ${botCount}`;
+            message.textContent = "Click a button below to make your first throw";
+            humanScore.style.backgroundColor = "rgb(239,239,239)"
+            message.style.backgroundColor = "rgb(239,239,239)"
+            botScore.style.backgroundColor = "rgb(239,239,239)"
         }
     </script>
 </body>
