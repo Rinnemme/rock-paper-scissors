@@ -16,7 +16,7 @@
                     Rules
                 </div> 
             </div>
-            <div class="message">
+            <div id="message">
                 <div class="message-text">
                     Click a button below to make your first throw
                 </div>
@@ -54,6 +54,7 @@
         const RockButton = document.getElementById("rock-button");
         const PaperButton = document.getElementById("paper-button");
         const ScissorsButton =  document.getElementById("scissors-button");
+        const Message = document.getElementById("message");
 
         RockButton.addEventListener("click",getRock)
         PaperButton.addEventListener("click",getPaper)
@@ -79,7 +80,7 @@
         }
 
         function runGame() {
-            console.log(HumanThrow)
+            getBotThrow()
         }
     </script>
 </body>
