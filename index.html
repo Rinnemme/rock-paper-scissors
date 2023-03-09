@@ -39,10 +39,10 @@
             </div>
             <div class="score-boxes">
                 <div id="human-score">
-                    You: 0
+                    
                 </div>
                 <div id="bot-score">
-                    Me: 0
+                    
                 </div>
             </div>
         </div>
@@ -51,12 +51,17 @@
         let HumanThrow;
         const Throws = ["Rock","Paper","Scissors"];
         let BotThrow;
-        let BotScore = 0;
-        let HumanScore = 0;
+        let BotCount = 0;
+        let HumanCount = 0;
+        const BotScore = document.getElementById("bot-score");
+        const HumanScore = document.getElementById("human-score");
         const RockButton = document.getElementById("rock-button");
         const PaperButton = document.getElementById("paper-button");
         const ScissorsButton =  document.getElementById("scissors-button");
         const Message = document.getElementById("message-text");
+        BotScore.textContent = `Me: ${BotCount}`
+        HumanScore.textContent = `You: ${HumanCount}`
+        
 
         RockButton.addEventListener("click",getRock)
         PaperButton.addEventListener("click",getPaper)
@@ -124,11 +129,13 @@
         }
 
         function addBotWin() {
-
+            ++BotCount;
+            BotScore.textContent = `Me: ${BotCount}`
         }
 
         function addHumanWin () {
-            
+            ++HumanCount;
+            HumanScore.textContent = `You: ${HumanCount}`
         }
     </script>
 </body>
