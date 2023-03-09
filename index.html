@@ -12,7 +12,7 @@
                 <img src="img/heading.svg" width=80%>
             </div>
             <div class="rules">
-                <div class="rule-button">
+                <div id="rule-button">
                     Rules
                 </div> 
             </div>
@@ -84,6 +84,9 @@
         const ScissorsButton =  document.getElementById("scissors-button");
         const Reset =  document.getElementById("reset-button");
         const Message = document.getElementById("message-text");
+        const Rules = document.getElementById("rules-window");
+        const CloseButton = document.getElementById("close-rules");
+        const RuleButton = document.getElementById("rule-button")
         BotScore.textContent = `Me: ${BotCount}`
         HumanScore.textContent = `You: ${HumanCount}`
         
@@ -92,6 +95,16 @@
         PaperButton.addEventListener("click",getPaper)
         ScissorsButton.addEventListener("click",getScissors)
         Reset.addEventListener("click",resetGame)
+        RuleButton.addEventListener("click",openRules)
+        CloseButton.addEventListener("click",closeRules)
+
+        function openRules() {
+            Rules.style.display = "flex";
+        }
+
+        function closeRules() {
+            Rules.style.display = "none";
+        }
 
         function getBotThrow() {
             return Throws[Math.floor(Math.random()*3)]

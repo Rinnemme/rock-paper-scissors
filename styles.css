@@ -55,7 +55,7 @@ body {
     padding:8px;
 }
 
-.rule-button {
+#rule-button {
     background-color:#D8372A;
     color:white;
     border-radius:10px;
@@ -65,7 +65,7 @@ body {
     
 }
 
-.rule-button:hover {
+#rule-button:hover {
     cursor:pointer;
     background-color:#E3564B;
 }
@@ -191,11 +191,13 @@ body {
     cursor:pointer;
 }
 
+/* rules modal window */
+
 #rules-window {
     position:fixed;
     z-index:1;
     width:40%;
-    display:flex;
+    display:none;
     flex-direction:column;
     border-radius:5px;
     box-shadow: 1px 1px 10px;
@@ -205,6 +207,10 @@ body {
     position:absolute;
     right:15px;
     top:10px;
+}
+
+#close-rules:hover {
+    cursor: pointer;
 }
 
 #rules-window .rules-header {
