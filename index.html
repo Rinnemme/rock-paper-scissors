@@ -24,13 +24,13 @@
         </div>
         <div class="game-buttons">
             <div class="rock">
-                <img class="throw-button" src="img/rock.png" width="100%">
+                <img class="throw-button" id="rock-button" src="img/rock.png" width="100%">
             </div>
             <div class="paper">
-                <img class="throw-button" src="img/paper.png" width="100%">
+                <img class="throw-button" id="paper-button" src="img/paper.png" width="100%">
             </div>
             <div class="scissors">
-                <img class="throw-button" src="img/scissors.png" width="100%">
+                <img class="throw-button" id="scissors-button" src="img/scissors.png" width="100%">
             </div>
         </div>
         <div class="scoreboard">
@@ -48,7 +48,39 @@
         </div>
     </div>
     <script>
-        
+        let HumanThrow;
+        const Throws = ["Rock","Paper","Scissors"];
+        const BotThrow = getBotThrow();
+        const RockButton = document.getElementById("rock-button");
+        const PaperButton = document.getElementById("paper-button");
+        const ScissorsButton =  document.getElementById("scissors-button");
+
+        RockButton.addEventListener("click",getRock)
+        PaperButton.addEventListener("click",getPaper)
+        ScissorsButton.addEventListener("click",getScissors)
+
+        function getBotThrow() {
+            return Throws[Math.floor(Math.random()*3)]
+        }
+
+        function getRock() {
+            HumanThrow = "Rock";
+            runGame();
+        }
+
+        function getPaper() {
+            HumanThrow = "Paper";
+            runGame();
+        }
+
+        function getScissors() {
+            HumanThrow = "Scissors";
+            runGame();
+        }
+
+        function runGame() {
+            console.log(HumanThrow)
+        }
     </script>
 </body>
 </html>
