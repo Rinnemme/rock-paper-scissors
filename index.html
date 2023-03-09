@@ -144,19 +144,25 @@
         function addBotWin() {
             ++BotCount;
             BotScore.textContent = `Me: ${BotCount}`;
+            BotScore.style.backgroundColor = "rgb(249,201,197)";
+            HumanScore.style.backgroundColor = "rgb(239,239,239)";
             testWin();
         }
 
         function addHumanWin () {
             ++HumanCount;
             HumanScore.textContent = `You: ${HumanCount}`;
+            HumanScore.style.backgroundColor = "rgb(201,240,230)";
+            BotScore.style.backgroundColor = "rgb(239,239,239)";
             testWin();
         }
 
         function testWin() {
             if (HumanCount === 5) {
+                Message.style.backgroundColor = "rgb(201,240,230)";
                 Message.textContent = "You've won our game to 5!";
             } else if (BotCount === 5) {
+                Message.style.backgroundColor = "rgb(249,201,197)";
                 Message.textContent = "I've won our game to 5!";
             }
             else return;
@@ -168,6 +174,9 @@
             BotCount=0;
             BotScore.textContent = `Me: ${BotCount}`;
             Message.textContent = "Click a button below to make your first throw";
+            HumanScore.style.backgroundColor = "rgb(239,239,239)"
+            Message.style.backgroundColor = "rgb(239,239,239)"
+            BotScore.style.backgroundColor = "rgb(239,239,239)"
         }
     </script>
 </body>

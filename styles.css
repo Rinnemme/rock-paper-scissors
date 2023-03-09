@@ -43,6 +43,7 @@ body {
     flex:1;
     align-items:center;
     justify-content:center;
+    padding-bottom:15px;
 }
 
 .rules {
@@ -55,12 +56,18 @@ body {
 }
 
 .rule-button {
-    background-color:#C9F0E6;
+    background-color:#D8372A;
+    color:white;
     border-radius:10px;
     padding:5px 10px 5px 10px;
     font-size:18px;
     font-weight:bold;
     
+}
+
+.rule-button:hover {
+    cursor:pointer;
+    background-color:#E3564B;
 }
 
 .message {
@@ -162,6 +169,8 @@ body {
     border-radius:5px;
 }
 
+/* reset button */
+
 .reset {
     display:flex;
     align-items:center;
@@ -172,6 +181,11 @@ body {
     background-color:black;
     color:white;
     border-radius:5px;
-    padding:10px;
+    padding:10px 15px 10px 15px;
     margin-top:10px;
+}
+
+#reset-button:hover {
+    background-color:#15372C;
+    cursor:pointer;
 }
