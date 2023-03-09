@@ -13,22 +13,22 @@ body {
     padding:0;
     align-items:center;
     justify-content:center;
+    background-color: white;
 }
 
 .content {
-    border:1px solid black;
     display:flex;
     flex-direction:column;
     width:70%;
-    height:50%;
+    padding:50px 20px 50px 20px;
     align-self:center;
     justify-self:center;
+    border-radius:10px;
 }
 
 /* Block 1 (heading, rules, message text)*/
 
 .rule-message {
-    border:1px solid black;
     display:flex;
     flex-direction:column;
     flex:2;
@@ -38,7 +38,6 @@ body {
 }
 
 .heading {
-    border:1px solid black;
     display:flex;
     flex:1;
     align-items:center;
@@ -47,18 +46,18 @@ body {
 }
 
 .rules {
-    border:1px solid black;
     display:flex;
     flex:1;
     align-items:center;
     justify-content:center;
     padding:8px;
+    margin-bottom:20px;
 }
 
 #rule-button {
     background-color:#D8372A;
     color:white;
-    border-radius:10px;
+    border-radius:5px;
     padding:5px 10px 5px 10px;
     font-size:18px;
     font-weight:bold;
@@ -71,27 +70,26 @@ body {
 }
 
 .message {
-    border:1px solid black;
     display:flex;
     flex:1;
     align-items:center;
     justify-content:center;
     text-align:center;
     padding:8px;
+    margin-bottom:10px;
 }
 
 #message-text {
     font-size:15px;
     font-weight:light;
     background-color:#EFEFEF;
-    padding:7px;
+    padding:10px;
     border-radius:5px;
 }
 
 /* Block 2 (buttons) */
 
 .game-buttons {
-    border:1px solid black;
     display:flex;
     flex:1;
     align-items:center;
@@ -102,19 +100,16 @@ body {
 }
 
 .rock {
-    border:1px solid black;
     display:flex;
     width:20%;
 }
 
 .paper {
-    border:1px solid black;
     display:flex;
     width:20%;
 }
 
 .scissors {
-    border:1px solid black;
     display:flex;
     width:20%;
 }
@@ -132,14 +127,12 @@ body {
 /* Block 3 (scoreboard) */
 
 .scoreboard {
-    border:1px solid black;
     display:flex;
     flex:1;
     flex-direction:column;
 }
 
 .score-heading{
-    border:1px solid black;
     display:flex;
     flex:1;
     justify-self:center;
@@ -152,7 +145,6 @@ body {
 }
 
 .score-boxes {
-    border:1px solid black;
     display:flex;
     flex:2;
     justify-content:center;
@@ -162,9 +154,8 @@ body {
 
 #human-score,
 #bot-score {
-    border:1px solid black;
     display:flex;
-    padding:15px;
+    padding:10px 15px 10px 15px;
     margin-top:15px;
     background-color:#EFEFEF;
     border-radius:5px;
@@ -176,14 +167,15 @@ body {
     display:flex;
     align-items:center;
     justify-content:center;
+    margin:15px;
 }
 
 #reset-button {
-    background-color:black;
     color:white;
     border-radius:5px;
     padding:10px 15px 10px 15px;
     margin-top:10px;
+    background-color: #031C17;
 }
 
 #reset-button:hover {
@@ -215,7 +207,7 @@ body {
 
 #rules-window .rules-header {
     position:relative;
-    background-color:#008561;
+    background-color:#15372C;
     padding:10px;
     border-radius: 5px 5px 0px 0px;
     text-align:center;
@@ -225,7 +217,7 @@ body {
 }
 
 .rules-content {
-    background-color: #EFEFEF;
+    background-color: #fdfdfd;
     border-radius: 0px 0px 5px 5px;
-    padding:30px;
+    padding:25px;
 }
