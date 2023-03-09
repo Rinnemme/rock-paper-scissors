@@ -190,3 +190,36 @@ body {
     background-color:#15372C;
     cursor:pointer;
 }
+
+#rules-window {
+    position:fixed;
+    z-index:1;
+    width:40%;
+    display:flex;
+    flex-direction:column;
+    border-radius:5px;
+    box-shadow: 1px 1px 10px;
+}
+
+#close-rules {
+    position:absolute;
+    right:15px;
+    top:10px;
+}
+
+#rules-window .rules-header {
+    position:relative;
+    background-color:#008561;
+    padding:10px;
+    border-radius: 5px 5px 0px 0px;
+    text-align:center;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.rules-content {
+    background-color: #EFEFEF;
+    border-radius: 0px 0px 5px 5px;
+    padding:30px;
+}
