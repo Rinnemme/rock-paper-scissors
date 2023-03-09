@@ -95,7 +95,10 @@
 
 
         function runGame() {
-            if (HumanThrow===BotThrow) {
+            if (HumanCount === 5 || BotCount === 5) {
+                Message.textContent = "Please press 'reset below to play again!";
+            }
+            else if (HumanThrow===BotThrow) {
                 Message.textContent = "Oh dang, we tied!";
             }
             else if (HumanThrow==="Rock") {
@@ -130,12 +133,23 @@
 
         function addBotWin() {
             ++BotCount;
-            BotScore.textContent = `Me: ${BotCount}`
+            BotScore.textContent = `Me: ${BotCount}`;
+            testWin();
         }
 
         function addHumanWin () {
             ++HumanCount;
-            HumanScore.textContent = `You: ${HumanCount}`
+            HumanScore.textContent = `You: ${HumanCount}`;
+            testWin();
+        }
+
+        function testWin() {
+            if (HumanCount === 5) {
+                Message.textContent = "You've won our game to 5!";
+            } else if (BotCount === 5) {
+                Message.textContent = "I've won our game to 5!";
+            }
+            else return;
         }
     </script>
 </body>
