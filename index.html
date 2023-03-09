@@ -16,8 +16,8 @@
                     Rules
                 </div> 
             </div>
-            <div id="message">
-                <div class="message-text">
+            <div class="message">
+                <div id="message-text">
                     Click a button below to make your first throw
                 </div>
             </div>
@@ -39,10 +39,10 @@
             </div>
             <div class="score-boxes">
                 <div id="human-score">
-                    test
+                    You: 0
                 </div>
                 <div id="bot-score">
-                    test
+                    Me: 0
                 </div>
             </div>
         </div>
@@ -51,10 +51,12 @@
         let HumanThrow;
         const Throws = ["Rock","Paper","Scissors"];
         let BotThrow;
+        let BotScore = 0;
+        let HumanScore = 0;
         const RockButton = document.getElementById("rock-button");
         const PaperButton = document.getElementById("paper-button");
         const ScissorsButton =  document.getElementById("scissors-button");
-        const Message = document.getElementById("message");
+        const Message = document.getElementById("message-text");
 
         RockButton.addEventListener("click",getRock)
         PaperButton.addEventListener("click",getPaper)
@@ -85,13 +87,48 @@
             runGame();
         }
 
+
+
         function runGame() {
             if (HumanThrow===BotThrow) {
-                Message.textContent = "You Tied!";
+                Message.textContent = "Oh dang, we tied!";
             }
-            else {
-                Message.textContent = "Try Again";
+            else if (HumanThrow==="Rock") {
+                if (BotThrow==="Scissors") {
+                    Message.textContent = "Your rock smashes my scissors!";
+                    addHumanWin();
+                }
+                if (BotThrow==="Paper") {
+                    Message.textContent = "My paper covers your rock!";
+                    addBotWin();
+                }
+            } else if (HumanThrow==="Paper") {
+                if (BotThrow==="Rock") {
+                    Message.textContent = "Your paper covers my rock!";
+                    addHumanWin();
+                }
+                if (BotThrow==="Scissors") {
+                    Message.textContent = "My Scissors cut your paper!";
+                    addBotWin();
+                }
+            } else if (HumanThrow==="Scissors") {
+                if (BotThrow==="Paper") {
+                    Message.textContent = "Your scissors cut my paper!";
+                    addHumanWin();
+                }
+                if (BotThrow==="Rock") {
+                    Message.textContent = "My rock smashes your scissors!";
+                    addBotWin();
+                }
             }
+        }
+
+        function addBotWin() {
+
+        }
+
+        function addHumanWin () {
+            
         }
     </script>
 </body>

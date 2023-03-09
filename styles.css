@@ -70,7 +70,7 @@ body {
     text-align:center;
 }
 
-.message-text {
+#message-text {
     font-size:15px;
     font-weight:light;
     background-color:#EFEFEF;
