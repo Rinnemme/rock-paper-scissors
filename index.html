@@ -45,6 +45,12 @@
                     
                 </div>
             </div>
+            <div class="reset">
+                <div id="reset-button">
+                    Reset
+                </div>
+            </div>
+            
         </div>
     </div>
     <script>
@@ -58,6 +64,7 @@
         const RockButton = document.getElementById("rock-button");
         const PaperButton = document.getElementById("paper-button");
         const ScissorsButton =  document.getElementById("scissors-button");
+        const Reset =  document.getElementById("reset-button");
         const Message = document.getElementById("message-text");
         BotScore.textContent = `Me: ${BotCount}`
         HumanScore.textContent = `You: ${HumanCount}`
