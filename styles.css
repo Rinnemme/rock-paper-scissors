@@ -103,6 +103,15 @@ body {
     width:20%;
 }
 
+.throw-button {
+    border-radius:50%;
+}
+
+.throw-button:hover {
+    box-shadow: 0 0 15px rgb(74, 74, 74);
+    cursor:pointer;
+}
+
 /* Block 3 (scoreboard) */
 
 .scoreboard {
