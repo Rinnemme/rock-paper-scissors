@@ -103,8 +103,10 @@
 
 
         function runGame() {
-            if (HumanCount === 5 || BotCount === 5) {
-                Message.textContent = "Please press 'reset below to play again!";
+            if (HumanCount === 5) {
+                Message.textContent = "You already won! Press reset to play again";
+            } else if (BotCount === 5) {
+                Message.textContent = "I already won! Press reset to play again";
             }
             else if (HumanThrow===BotThrow) {
                 Message.textContent = "Oh dang, we tied!";

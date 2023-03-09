@@ -51,6 +51,7 @@ body {
     flex:1;
     align-items:center;
     justify-content:center;
+    padding:8px;
 }
 
 .rule-button {
@@ -59,6 +60,7 @@ body {
     padding:5px 10px 5px 10px;
     font-size:18px;
     font-weight:bold;
+    
 }
 
 .message {
@@ -68,6 +70,7 @@ body {
     align-items:center;
     justify-content:center;
     text-align:center;
+    padding:8px;
 }
 
 #message-text {
@@ -155,6 +158,8 @@ body {
     display:flex;
     padding:15px;
     margin-top:15px;
+    background-color:#EFEFEF;
+    border-radius:5px;
 }
 
 .reset {
@@ -164,7 +169,7 @@ body {
 }
 
 #reset-button {
-    background-color:#031C17;
+    background-color:black;
     color:white;
     border-radius:5px;
     padding:10px;
