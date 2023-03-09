@@ -50,7 +50,7 @@
     <script>
         let HumanThrow;
         const Throws = ["Rock","Paper","Scissors"];
-        const BotThrow = getBotThrow();
+        let BotThrow;
         const RockButton = document.getElementById("rock-button");
         const PaperButton = document.getElementById("paper-button");
         const ScissorsButton =  document.getElementById("scissors-button");
@@ -66,21 +66,32 @@
 
         function getRock() {
             HumanThrow = "Rock";
+            BotThrow = Throws[Math.floor(Math.random()*3)];
+            console.log(BotThrow);
             runGame();
         }
 
         function getPaper() {
             HumanThrow = "Paper";
+            BotThrow = Throws[Math.floor(Math.random()*3)];
+            console.log(BotThrow);
             runGame();
         }
 
         function getScissors() {
             HumanThrow = "Scissors";
+            BotThrow = Throws[Math.floor(Math.random()*3)];
+            console.log(BotThrow);
             runGame();
         }
 
         function runGame() {
-            getBotThrow()
+            if (HumanThrow===BotThrow) {
+                Message.textContent = "You Tied!";
+            }
+            else {
+                Message.textContent = "Try Again";
+            }
         }
     </script>
 </body>
